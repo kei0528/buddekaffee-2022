@@ -3,7 +3,6 @@ import type { IgResType } from 'src/types/instagram.type';
 import { uuid } from 'src/utils/uuid';
 
 export const Footer = ({ igPhotos }: { igPhotos: IgResType }) => {
-  console.log(igPhotos);
   return (
     <footer className='px-5 mt-10  py-10 border-t sm:px-12 bg-lighter-yellow'>
       <div className='max-w-max-section mx-auto flex justify-between gap-20 flex-wrap'>
