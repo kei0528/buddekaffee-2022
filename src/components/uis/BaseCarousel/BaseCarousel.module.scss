@@ -1,25 +1,7 @@
-.carousel {
-  :global(.splide__pagination) {
-    @apply -bottom-8;
-  }
+.pagination {
+  @apply mt-6 flex justify-center gap-0.5;
 
-  :global(.splide__arrows) {
-    @apply hidden mxl:block;
-  }
-
-  :global(.splide__arrow) {
-    @apply bg-transparent duration-200;
-  }
-
-  :global(.splide__arrow--next) {
-    @apply -right-14;
-  }
-
-  :global(.splide__arrow--prev) {
-    @apply -left-14;
-  }
-
-  :global(.splide__pagination__page.is-active) {
-    @apply bg-sky-blue;
+  :global(.swiper-pagination-bullet-active) {
+    @apply scale-150 bg-text-black;
   }
 }

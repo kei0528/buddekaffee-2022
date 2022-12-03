@@ -1,4 +1,4 @@
 export type IgResType = {
-  data: any;
+  data: { id: string; media_url: string; permalink: string }[];
   paging: any;
 };

@@ -1,17 +1,50 @@
-import { ReactElement } from 'react';
+import 'swiper/css';
+import 'swiper/css/pagination';
 import s from './BaseCarousel.module.scss';
 
-export const BaseCarousel = ({ contents }: { contents: ReactElement }) => {
-  let ref: HTMLElement | undefined;
+import { ReactElement, useMemo, useRef } from 'react';
+import { uuid } from 'src/utils/uuid';
+import { Navigation, Pagination } from 'swiper';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import Image from 'next/image';
 
+type Props = {
+  contents: ReactElement[];
+  slideWidth: string;
+  id: string;
+};
+
+export const BaseCarousel = ({ contents, slideWidth, id }: Props) => {
   return (
-    <></>
-    // <section ref={ref} class={`splide ${s.carousel}`} aria-label='Splide Basic HTML Example'>
-    //   <div class='splide__track'>
-    //     <ul class='splide__list'>
-    //       <For each={contents}>{elm => <li class='splide__slide w-1/3'>{elm}</li>}</For>
-    //     </ul>
-    //   </div>
-    // </section>
+    <div className='relative'>
+      <Swiper
+        slidesPerView='auto'
+        spaceBetween={13}
+        modules={[Navigation, Pagination]}
+        navigation={{
+          nextEl: `#next-btn-${id}`,
+          prevEl: `#prev-btn-${id}`
+        }}
+        pagination={{
+          el: `#pagination-${id}`,
+          type: 'bullets'
+        }}
+      >
+        {contents.map(Content => (
+          <SwiperSlide style={{ width: slideWidth }} key={uuid()}>
+            {Content}
+          </SwiperSlide>
+        ))}
+      </Swiper>
+      <div className='hidden mxl:absolute mxl:top-0 mxl:left-0 mxl:w-full mxl:h-full mxl:flex mxl:items-center mxl:justify-between'>
+        <button className='-translate-x-14' id={`prev-btn-${id}`}>
+          <Image src='/icons/Icon-Slider_arrow_next.svg' alt='Move Carousel to right' width={11} height={21} />
+        </button>
+        <button className='translate-x-14' id={`next-btn-${id}`}>
+          <Image src='/icons/Icon-Slider_arrow_prev.svg' alt='Move Carousel to right' width={11} height={21} />
+        </button>
+      </div>
+      <div className={s.pagination} id={`pagination-${id}`} />
+    </div>
   );
 };
