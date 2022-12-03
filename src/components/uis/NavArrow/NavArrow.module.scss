@@ -1,0 +1,23 @@
+.arrow {
+  @apply hidden lg:absolute lg:h-full lg:w-0.5 lg:bg-text-black lg:top-0 lg:right-10 lg:flex lg:items-center;
+
+  &[data-type='start']:before,
+  &[data-type='end']:before {
+    content: url('/parts/Parts_Stripe.svg');
+    position: absolute;
+  }
+
+  &[data-type='start'] {
+    &:before {
+      top: -6px;
+      left: 2px;
+    }
+  }
+
+  &[data-type='end'] {
+    &:before {
+      bottom: -13px;
+      right: 2px;
+    }
+  }
+}

@@ -1,0 +1,1 @@
+export { BaseHeadline } from './BaseHeadline';
