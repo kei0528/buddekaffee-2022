@@ -1,6 +1,6 @@
 import { RefObject, useEffect } from 'react';
 
-export const useElementOnVisible = ({ ref, callback, threshold = 0.8 }: { ref: RefObject<any>; callback: (elm: HTMLElement) => void; threshold?: number }) => {
+export const useElementOnVisible = ({ ref, callback, threshold = 0.4 }: { ref: RefObject<any>; callback: (elm: HTMLElement) => void; threshold?: number }) => {
   useEffect(() => {
     if (ref.current === null) return;
     const io = new IntersectionObserver(

@@ -10,7 +10,9 @@ module.exports = {
       colors: {
         'text-black': '#383131',
         'sky-blue': '#325C84',
-        'lighter-yellow': '#FCFAF6'
+        'lighter-yellow': '#FCFAF6',
+        'dark-transparent': '#1e1f25cc',
+        'pink': '#e18eb4'
       },
       maxWidth: {
         'max-section': '1200px'

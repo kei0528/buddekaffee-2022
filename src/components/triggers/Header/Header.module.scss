@@ -61,3 +61,8 @@
     @apply translate-y-0 opacity-100;
   }
 }
+
+.badged::before {
+  content: '';
+  @apply w-4 h-4 rounded-full bg-pink absolute -right-2 top-0 -z-10;
+}

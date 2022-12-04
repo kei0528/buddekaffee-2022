@@ -1,16 +1,17 @@
 import s from './Header.module.scss';
 import { useHeaderState } from './Header.state';
 import Image from 'next/image';
-
-const navItems = [
-  { name: 'HOME', link: '#home' },
-  { name: 'ÜBER UNS', link: '#about-us' },
-  { name: 'GALLERIE', link: '#gallery' },
-  { name: 'KONTAKT', link: '#contact' }
-];
+import { NewsModal } from '../NewsModal';
 
 export const Header = () => {
-  const { isOpen, toggleMenu } = useHeaderState();
+  const { isOpen, toggleMenu, newsIsOpen, toggleNewsIsOpen } = useHeaderState();
+
+  const navItems = [
+    { name: 'HOME', link: '#home' },
+    { name: 'ÜBER UNS', link: '#about-us' },
+    { name: 'GALLERIE', link: '#gallery' },
+    { name: 'KONTAKT', link: '#contact' }
+  ];
 
   return (
     <>
@@ -29,9 +30,21 @@ export const Header = () => {
               </a>
             </li>
           ))}
+          <li className={`${s.item} ${isOpen ? s.appear : ''}`} style={{ transitionDelay: `${100 + navItems.length * 100}ms` }}>
+            <button
+              className={`text-text-black text-2xl font-display font-bold duration-300 lg:text-3xl md:hover:-translate-y-1 relative ${s.badged}`}
+              onClick={() => {
+                toggleMenu();
+                toggleNewsIsOpen();
+              }}
+            >
+              News
+            </button>
+          </li>
         </ul>
       </header>
       <div className={isOpen ? s.bg_blur : ''} onClick={toggleMenu} />
+      <NewsModal newsOpen={newsIsOpen} close={toggleNewsIsOpen} />
     </>
   );
 };
