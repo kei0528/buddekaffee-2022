@@ -1,3 +1,4 @@
+import s from './Hero.module.scss';
 // Components
 import Image from 'next/image';
 import { NavArrow } from 'src/components/uis/NavArrow';
@@ -8,7 +9,7 @@ const ListItem = ({ label }: { label: string }) => {
 
 export const Hero = () => {
   return (
-    <section className='relative min-h-[calc(80vw+180px)] max-h-[calc(80vw+40px)] h-[calc(100vh-96px)] flex flex-col md:max-h-[920px] justify-center md:min-h-[700px] md:h-[calc(100vh-221px)] lg:h-[calc(100vh-259px)] lg:min-h-[1040px] lg:pb-8 '>
+    <section className={s.hero}>
       <div className='mx-auto'>
         <Image src='/images/Image_Cafe-drawn.webp' alt='' placeholder='blur' blurDataURL='/images/Image_Cafe-drawn-low-reso.webp' width={1100} height={872} />
       </div>

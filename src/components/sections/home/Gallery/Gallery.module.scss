@@ -1,0 +1,33 @@
+@use 'src/styles/mixins.scss' as mix;
+
+.gallery {
+  @apply pt-16 sm:pt-24 md:pt-32 lg:pt-40;
+
+  .headline {
+    @include mix.headline-anime-before;
+  }
+
+  .carousel {
+    @include mix.appearing-anime-before;
+    @apply delay-500;
+  }
+
+  .button {
+    @include mix.appearing-anime-before;
+    @apply delay-1000;
+  }
+
+  &[data-is-visible='true'] {
+    .headline {
+      @include mix.headline-anime-after;
+    }
+
+    .carousel {
+      @include mix.appearing-anime-after;
+    }
+
+    .button {
+      @include mix.appearing-anime-after;
+    }
+  }
+}

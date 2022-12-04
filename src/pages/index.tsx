@@ -1,9 +1,9 @@
 import { InferGetStaticPropsType } from 'next';
-import { About } from 'src/components/pages/Home/sections/About';
-import { Contact } from 'src/components/pages/Home/sections/Contact';
-import { Gallery } from 'src/components/pages/Home/sections/Gallery';
-import { Hero } from 'src/components/pages/Home/sections/Hero';
-import { Map } from 'src/components/pages/Home/sections/Map';
+import { About } from 'src/components/sections/home/About';
+import { Contact } from 'src/components/sections/home/Contact';
+import { Gallery } from 'src/components/sections/home/Gallery';
+import { Hero } from 'src/components/sections/home/Hero';
+import { Map } from 'src/components/sections/home/Map';
 import { Footer } from 'src/components/triggers/Footer';
 
 export const getStaticProps = async () => {

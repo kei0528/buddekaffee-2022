@@ -1,0 +1,18 @@
+@mixin headline-anime-before {
+  transition-duration: 1000ms;
+  transition-property: transform;
+  transform: rotate3d(1, 0, 0, 90deg);
+}
+
+@mixin headline-anime-after {
+  transform: rotate3d(1, 1, 1, 0deg);
+}
+
+@mixin appearing-anime-before {
+  @apply opacity-0 translate-y-20 duration-1000;
+  transition-property: translate opacity;
+}
+
+@mixin appearing-anime-after {
+  @apply opacity-100 translate-y-0;
+}

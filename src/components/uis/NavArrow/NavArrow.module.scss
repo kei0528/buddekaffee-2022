@@ -1,5 +1,5 @@
 .arrow {
-  @apply hidden lg:absolute lg:h-full lg:w-0.5 lg:bg-text-black lg:top-0 lg:right-10 lg:flex lg:items-center;
+  @apply hidden lg:absolute lg:h-full lg:w-0.5 lg:bg-text-black lg:top-0 lg:right-10 lg:flex lg:items-center z-30;
 
   &[data-type='start']:before,
   &[data-type='end']:before {

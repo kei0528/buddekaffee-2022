@@ -1,0 +1,46 @@
+@use 'src/styles/mixins.scss' as mix;
+
+.about {
+  @apply relative md:py-36 lg:py-40 overflow-hidden bg-lighter-yellow;
+
+  &:before {
+    @apply absolute top-0 left-0 w-screen z-0;
+    content: url('/parts/Parts_About-wave-top.svg');
+  }
+
+  &:after {
+    @apply absolute -bottom-4 left-0 w-screen z-0;
+    content: url('/parts/Parts_About-wave-bottom.svg');
+  }
+
+  &_contents {
+    @include mix.appearing-anime-before;
+    @apply delay-500;
+  }
+
+  .img_container {
+    @include mix.appearing-anime-before;
+  }
+
+  .headline {
+    @include mix.headline-anime-before;
+  }
+
+  &[data-is-visible='true'] {
+    .img_container {
+      @include mix.appearing-anime-after;
+    }
+
+    .headline {
+      @include mix.headline-anime-after;
+    }
+
+    .about_contents {
+      @include mix.appearing-anime-after;
+    }
+  }
+}
+
+.about_img {
+  @apply shadow-[0px_2px_10px_2px_#6464649c] block;
+}

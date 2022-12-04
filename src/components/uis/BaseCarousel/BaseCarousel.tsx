@@ -12,11 +12,12 @@ type Props = {
   contents: ReactElement[];
   slideWidth: string;
   id: string;
+  className?: string;
 };
 
-export const BaseCarousel = ({ contents, slideWidth, id }: Props) => {
+export const BaseCarousel = ({ contents, slideWidth, id, className }: Props) => {
   return (
-    <div className='relative'>
+    <div className={`relative ${className ?? ''}`}>
       <Swiper
         slidesPerView='auto'
         spaceBetween={13}

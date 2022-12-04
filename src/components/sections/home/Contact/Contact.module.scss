@@ -1,0 +1,17 @@
+@use 'src/styles/mixins.scss' as mix;
+
+.contact {
+  @include mix.appearing-anime-before;
+
+  &[data-is-visible='true'] {
+    @include mix.appearing-anime-after;
+  }
+}
+
+.label {
+  @apply flex flex-col text-text-black font-bold;
+}
+
+.input {
+  @apply p-1 text-lg border-black border text-text-black;
+}

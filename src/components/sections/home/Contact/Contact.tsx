@@ -5,10 +5,20 @@ import { BaseSection as Section } from 'src/components/uis/BaseSection';
 import { Button } from 'src/components/uis/Button';
 import { NavArrow } from 'src/components/uis/NavArrow';
 import Image from 'next/image';
+import { useElementOnVisible } from 'src/hooks/useElementOnVisible';
+import { createRef } from 'react';
 
 export const Contact = () => {
+  const sectionRef = createRef<HTMLElement>();
+  useElementOnVisible({
+    ref: sectionRef,
+    callback: elm => {
+      elm.dataset.isVisible = 'true';
+    }
+  });
+
   return (
-    <Section outerClass=''>
+    <Section outerClass={s.contact} ref={sectionRef}>
       <>
         <div className='bg-lighter-yellow rounded-md shadow-lg px-5 py-8 lg:flex lg:p-0 lg:overflow-hidden'>
           <div className='hidden  lg:block lg:w-1/2 lg:object-cover'>

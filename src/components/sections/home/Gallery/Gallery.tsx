@@ -1,3 +1,5 @@
+import s from './Gallery.module.scss';
+
 import { uuid } from 'src/utils/uuid';
 
 import Image from 'next/image';
@@ -6,6 +8,8 @@ import { BaseHeadline as Headline } from 'src/components/uis/BaseHeadline';
 import { BaseSection as Section } from 'src/components/uis/BaseSection';
 import { Button } from 'src/components/uis/Button';
 import { NavArrow } from 'src/components/uis/NavArrow';
+import { useElementOnVisible } from 'src/hooks/useElementOnVisible';
+import { createRef } from 'react';
 
 const imgSrcs = ['/images/gallery/Image_Gallery1.jpg', '/images/gallery/Image_Gallery2.jpg', '/images/gallery/Image_Gallery3.jpg', '/images/gallery/Image_Gallery4.jpg', '/images/gallery/Image_Gallery5.jpg', '/images/gallery/Image_Gallery6.jpg', '/images/gallery/Image_Gallery7.jpg', '/images/gallery/Image_Gallery8.jpg', '/images/gallery/Image_Gallery9.jpg'];
 
@@ -18,12 +22,21 @@ const ImageWrapper = ({ imgSrc }: { imgSrc: string }) => {
 };
 
 export const Gallery = () => {
+  const sectionRef = createRef<HTMLElement>();
+  useElementOnVisible({
+    ref: sectionRef,
+    callback: elm => {
+      elm.dataset.isVisible = 'true';
+    }
+  });
+
   return (
-    <Section outerClass='pt-16 sm:pt-24 md:pt-32 lg:pt-40' innerClass=''>
+    <Section ref={sectionRef} outerClass={s.gallery} innerClass=''>
       <>
-        <Headline label='Gallery' />
+        <Headline className={s.headline} label='Gallery' />
         <div className='w-full'>
           <Carousel
+            className={s.carousel}
             contents={imgSrcs.map(src => (
               <ImageWrapper imgSrc={src} key={uuid()} />
             ))}
@@ -31,7 +44,9 @@ export const Gallery = () => {
             id='gallery'
           />
         </div>
-        <Button className='mt-12 w-full sm:w-fit sm:mx-auto sm:block'>Zum Gallerie</Button>
+        <div className={s.button}>
+          <Button className='mt-12 w-full  sm:w-fit sm:mx-auto sm:block'>Zum Gallerie</Button>
+        </div>
         <NavArrow label='Gallerie' />
       </>
     </Section>
