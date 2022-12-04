@@ -40,7 +40,7 @@ export const Footer = ({ igPhotos }: { igPhotos: IgResType }) => {
             {igPhotos.data.map(imgData => (
               <li className='w-[30vw] h-[30vw] overflow-hidden relative list-none sm:w-24 sm:h-24' key={uuid()}>
                 <a href={imgData.permalink}>
-                  <Image className='h-full w-full object-cover duration-150 hover:brightness-75' src={imgData.media_url} alt='' fill />
+                  <img className='h-full w-full object-cover duration-150 hover:brightness-75' src={imgData.media_url} alt='' />
                 </a>
               </li>
             ))}
