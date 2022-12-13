@@ -16,9 +16,10 @@ import { useContactState } from './Contact.state';
 import { sendMail } from 'src/services/mailService';
 import { fetchStatus, validateMessages } from 'src/utils/status';
 import { regex } from 'src/utils/regex';
+import { Loader } from 'src/components/uis/Loader';
 
 export const Contact = () => {
-  const sectionRef = createRef<HTMLElement>();
+  const sectionRef = createRef<HTMLDivElement>();
   const { errors, register, handleSubmit, setSendStatus, sendStatus } = useContactState();
 
   useElementOnVisible({
@@ -29,20 +30,35 @@ export const Contact = () => {
   });
 
   return (
-    <Section outerClass={s.contact} ref={sectionRef}>
+    <Section id='contact'>
       <>
-        <div className='bg-lighter-yellow rounded-md shadow-lg px-5 py-8 lg:flex lg:p-0 lg:overflow-hidden'>
+        <div className={`bg-lighter-yellow rounded-md shadow-lg px-5 py-8 lg:flex lg:p-0 lg:overflow-hidden ${s.contact}`} ref={sectionRef}>
           <div className='hidden  lg:block lg:w-1/2 lg:object-cover'>
             <Image className='h-full object-cover' src='/images/Image_Contact.webp' alt='' width={1000} height={819} />
           </div>
-          <div className='py-14 lg:flex-1 lg:px-5 mxl:px-10 '>
+          <div className='lg:flex-1 lg:px-5 lg:py-14  mxl:px-10 '>
             <Headline label='Kontakt' className='2xl:text-5xl' />
             {sendStatus === 'LOADING' ? (
-              <div>loading...</div>
+              <div className='h-[calc(100%-1.5rem-20px)] w-full flex flex-col justify-center gap-5 items-center'>
+                <Loader className='mt-6 lg:-mt-12' />
+                <span className='text-lg animate-bounce'>Wird gesendet...</span>
+              </div>
             ) : sendStatus === 'ERROR' ? (
-              <div>Error!</div>
+              <div className='flex flex-col justify-center h-[calc(100%-1.5rem-20px)] w-full items-center gap-5'>
+                <Image className='mt-6 w-36 lg:-mt-12' src='/images/Image_Mail-error.webp' alt='' width={256} height={280} />
+                <span className='text-center text-red-500'>
+                  Oh Nein! Etwas ist schief gelaufen. Bitte probiert später nochmal, oder gib den{' '}
+                  <a className='text-sky-blue underline italic mx-2' href='mailto:keisuketanaka97@gmail.com'>
+                    Entwickler
+                  </a>{' '}
+                  bitte Bescheit.
+                </span>
+              </div>
             ) : sendStatus === 'SUCCESS' ? (
-              <div>Mail send!</div>
+              <div className='flex flex-col justify-center h-[calc(100%-1.5rem-20px)] w-full items-center gap-5'>
+                <Image className='mt-6 w-36 lg:-mt-12' src='/images/Image_Mail-send.webp' alt='' width={256} height={280} />
+                <span className='text-center text-3xl text-text-black font-bold font-display'>Danke! Die Mail wurde gesendet.</span>
+              </div>
             ) : (
               <form
                 className='flex flex-col gap-4'

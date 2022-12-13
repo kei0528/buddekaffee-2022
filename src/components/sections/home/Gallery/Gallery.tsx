@@ -31,7 +31,7 @@ export const Gallery = () => {
   });
 
   return (
-    <Section ref={sectionRef} outerClass={s.gallery} innerClass=''>
+    <Section ref={sectionRef} outerClass={s.gallery} id='gallery'>
       <>
         <Headline className={s.headline} label='Gallery' />
         <div className='w-full'>

@@ -1,0 +1,1 @@
+export { ManageOpeningHours } from './ManageOpeningHours';

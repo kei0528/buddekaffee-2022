@@ -1,0 +1,1 @@
+.pagination{@apply mt-6 flex justify-center gap-0.5}.pagination :global(.swiper-pagination-bullet-active){@apply scale-150 bg-text-black}

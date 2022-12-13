@@ -39,7 +39,7 @@
 }
 
 .header_menu {
-  @apply w-screen p-10 fixed -bottom-full left-0 duration-200 flex flex-col items-center gap-6 md:pb-0 md:gap-10 lg:gap-20;
+  @apply w-screen p-10 fixed -bottom-full left-0 duration-200 flex flex-col items-center gap-6 md:pb-0 md:pt-8 md:gap-10 lg:gap-20;
 
   &.is_open {
     @apply bottom-0;

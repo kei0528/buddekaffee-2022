@@ -9,8 +9,8 @@ const ListItem = ({ label }: { label: string }) => {
 
 export const Hero = () => {
   return (
-    <section className={s.hero}>
-      <div className='mx-auto'>
+    <section id='home' className={s.hero}>
+      <div className='mx-auto max-w-[1040px] md:w-11/12'>
         <Image src='/images/Image_Cafe-drawn.webp' alt='' placeholder='blur' blurDataURL='/images/Image_Cafe-drawn-low-reso.webp' width={1100} height={872} />
       </div>
       <ul className='flex justify-center gap-10 my-10'>
@@ -18,6 +18,9 @@ export const Hero = () => {
         <ListItem label='SA: 10 - 17' />
         <ListItem label='SO: 11 - 16' />
       </ul>
+      <a href='#about-us' className='mx-auto relative z-10 cursor-pointer p-1 animate-bounce hover:animate-none'>
+        <Image src='/icons/Icon_Triangle-down.svg' alt='' width={31} height={12} />
+      </a>
       <NavArrow label='HOME' position='start' />
     </section>
   );

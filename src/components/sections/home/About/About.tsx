@@ -22,7 +22,7 @@ export const About = () => {
   useTiltEffect({ ref: imgRef });
 
   return (
-    <Section outerClass={s.about} innerClass='md:flex md:gap-10 md:items-center py-20 lg:gap-20 lg:py-32' ref={sectionRef}>
+    <Section outerClass={s.about} innerClass='md:flex md:gap-10 md:items-center py-20 lg:gap-20 lg:py-32' id='about-us' ref={sectionRef}>
       <>
         <div className='mx-auto relative md:flex-1 md:h-fit'>
           <Headline label='ÜBER UNS' className={s.headline} />
