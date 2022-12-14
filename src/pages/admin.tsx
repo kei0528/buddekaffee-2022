@@ -10,7 +10,7 @@ const Admin = () => {
         <Headline label='Admin Dashboard' Element='h1' />
         <div className='grid gap-8 md:grid-cols-2'>
           <ManageNews />
-          <ManageOpeningHours />
+          {/* <ManageOpeningHours /> */}
         </div>
       </>
     </Section>

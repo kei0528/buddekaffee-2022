@@ -51,7 +51,7 @@
 }
 
 .bg_blur {
-  @apply fixed h-screen w-screen backdrop-blur-sm bg-[#ffffff80] md:hidden;
+  @apply fixed h-screen w-screen backdrop-blur-md bg-[#ffffffba] z-40 md:hidden;
 }
 
 .item {
