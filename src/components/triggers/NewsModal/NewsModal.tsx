@@ -21,13 +21,13 @@ import s from './NewsModal.module.scss';
 import { BaseHeadline } from 'src/components/uis/BaseHeadline';
 import { BaseModal } from '../BaseModal';
 
-export const NewsModal = ({ newsOpen, close }: { newsOpen: boolean; close: () => void }) => {
+export const NewsModal = ({ newsOpen, close, headline, description, date }: { newsOpen: boolean; close: () => void; headline: string; description: string; date: number }) => {
   return (
     <BaseModal modalOpen={newsOpen} close={close}>
       <>
-        <BaseHeadline label='Neue Öffnungszeiten' />
-        <div className={s.news_contents}>Liebe Kaffeefreunde, Wir haben geöffnet: Mi - Fr, 9 - 16, Sa, 10 - 17, So, 11 - 16. Herbstferien: 15.10.22 - 8.11.22 Ab dem 9.11.22 sind wir wieder für euch da! Wir freuen uns auf euren Besuch! Herzlichst, euer BUDDE-Team</div>
-        <time className='mt-12 block text-right text-gray-600'>01.01.10</time>
+        <BaseHeadline label={headline} />
+        <div className={s.news_contents}>{description}</div>
+        <time className='mt-12 block text-right text-gray-600'>{new Date(date).toLocaleDateString()}</time>
       </>
     </BaseModal>
   );

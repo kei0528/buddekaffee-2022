@@ -1,0 +1,13 @@
+.about_coffee {
+  @apply relative md:py-36 lg:py-40 overflow-hidden bg-lighter-yellow;
+
+  &:before {
+    @apply absolute top-0 left-0 w-screen z-0;
+    content: url('/parts/Parts_About-wave-top.svg');
+  }
+
+  &:after {
+    @apply absolute -bottom-4 left-0 w-screen z-0;
+    content: url('/parts/Parts_About-wave-bottom.svg');
+  }
+}

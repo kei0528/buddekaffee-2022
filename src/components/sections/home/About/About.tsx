@@ -9,6 +9,7 @@ import { BaseParagraph as P } from 'src/components/uis/BaseParagraph';
 import { useElementOnVisible } from 'src/hooks/useElementOnVisible';
 import { useRef } from 'react';
 import { useTiltEffect } from 'src/hooks/useTiltEffect';
+import Link from 'next/link';
 
 export const About = () => {
   const sectionRef = useRef<HTMLElement>(null);
@@ -24,14 +25,14 @@ export const About = () => {
   return (
     <Section outerClass={s.about} innerClass='md:flex md:gap-10 md:items-center py-20 lg:gap-20 lg:py-32' id='about-us' ref={sectionRef}>
       <>
-        <div className='mx-auto relative md:flex-1 md:h-fit'>
+        <div className='mx-auto relative z-10 md:flex-1 md:h-fit'>
           <Headline label='ÜBER UNS' className={s.headline} />
           <div className={s.about_contents}>
             <P>Herz und Kopf des kleinen Cafés in der Buddestraße in Berlin-Tegel sind die Betreiberin Svenja Fox und der ehemalige Head-Barista bei BUDDE KAFFEE, Keisuke Tanaka, die aus dem Geheimtipp BUDDE KAFFEE längst eine Institution gemacht haben, eine Anlaufstelle für alle, die auf der Suche nach einem extrem gut zubereiteten Kaffee und hausgebackenen veganen Kuchen in gemütlicher und freundlicher Atmosphäre sind.</P>
-            <a className='mt-4 flex items-center gap-2 text-base text-sky-blue lg:text-lg'>
+            <Link className='mt-4 flex items-center gap-2 text-base w-fit text-sky-blue lg:text-lg' href='/about'>
               Mehr lesen
               <Image src='/icons/Icon-Arrow_right.svg' alt='' width={6} height={6} />
-            </a>
+            </Link>
           </div>
         </div>
         <div className={`relative mt-10 md:flex-1 z-10  ${s.img_container}`}>

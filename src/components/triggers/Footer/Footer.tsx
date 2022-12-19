@@ -4,7 +4,7 @@ import { uuid } from 'src/utils/uuid';
 
 export const Footer = ({ igPhotos }: { igPhotos: IgResType }) => {
   return (
-    <footer className='px-5 mt-10  py-10 border-t sm:px-12 bg-lighter-yellow'>
+    <footer className='px-5 py-10 border-t sm:px-12 bg-lighter-yellow'>
       <div className='max-w-max-section mx-auto flex justify-between gap-20 flex-wrap'>
         <div>
           <h5 className='text-3xl font-bold font-display mb-3'>Adresse</h5>

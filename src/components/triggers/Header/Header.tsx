@@ -5,13 +5,13 @@ import { NewsModal } from '../NewsModal';
 import Link from 'next/link';
 
 export const Header = () => {
-  const { isOpen, toggleMenu, newsIsOpen, toggleNewsIsOpen, closeMenu } = useHeaderState();
+  const { isOpen, toggleMenu, newsIsOpen, toggleNewsIsOpen, closeMenu, data, isLoading, error } = useHeaderState();
 
   const navItems = [
     { name: 'HOME', link: '' },
-    { name: 'ÜBER UNS', link: '#about-us' },
-    { name: 'GALLERIE', link: '#gallery' },
-    { name: 'KONTAKT', link: '#contact' }
+    { name: 'ÜBER UNS', link: '/about' },
+    { name: 'GALLERIE', link: '/#gallery' },
+    { name: 'KONTAKT', link: '/#contact' }
   ];
 
   return (
@@ -45,7 +45,7 @@ export const Header = () => {
         </ul>
       </header>
       <div className={isOpen ? s.bg_blur : ''} onClick={toggleMenu} />
-      <NewsModal newsOpen={newsIsOpen} close={toggleNewsIsOpen} />
+      {!isLoading && <NewsModal newsOpen={newsIsOpen} close={toggleNewsIsOpen} headline={data.title} description={data.description} date={data.lastEdit} />}
     </>
   );
 };
