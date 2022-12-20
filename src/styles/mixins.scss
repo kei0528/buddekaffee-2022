@@ -10,7 +10,7 @@
 
 @mixin appearing-anime-before {
   @apply opacity-0 translate-y-20 duration-1000;
-  transition-property: translate opacity;
+  transition-property: translate, opacity;
 }
 
 @mixin appearing-anime-after {

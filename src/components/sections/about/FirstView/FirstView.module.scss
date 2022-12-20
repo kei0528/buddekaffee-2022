@@ -1,0 +1,29 @@
+@use 'src/styles/mixins.scss' as g;
+
+.fv {
+  &__img,
+  &__description {
+    @include g.appearing-anime-before;
+  }
+
+  &__headline {
+    @include g.headline-anime-before;
+  }
+
+  &[data-is-visible='true'] {
+    .fv__img,
+    .fv__description {
+      @include g.appearing-anime-after;
+    }
+
+    .fv__description {
+      @apply delay-500 md:delay-75;
+    }
+
+    .fv__headline {
+      @include g.headline-anime-after;
+
+      @apply delay-500 md:delay-200;
+    }
+  }
+}

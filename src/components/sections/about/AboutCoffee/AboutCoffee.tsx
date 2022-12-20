@@ -5,17 +5,28 @@ import { BaseParagraph as P } from 'src/components/uis/BaseParagraph';
 import Image from 'next/image';
 import { NavArrow } from 'src/components/uis/NavArrow';
 import { BaseAnchor as A } from 'src/components/uis/BaseAnchor';
+import { useRef } from 'react';
+import { useElementOnVisible } from 'src/hooks/useElementOnVisible';
 
 export const AboutCoffee = () => {
+  const sectionRef = useRef<HTMLElement>(null);
+
+  useElementOnVisible({
+    ref: sectionRef,
+    callback: elm => {
+      elm.dataset.isVisible = 'true';
+    }
+  });
+
   return (
-    <Section outerClass={s.about_coffee} innerClass='py-20 lg:py-32'>
+    <Section outerClass={s.about_coffee} innerClass='py-20 lg:py-32' ref={sectionRef}>
       <>
-        <Headline label='Über uns' />
-        <div>
+        <Headline className={s.about_coffee__headline} label='Über uns' />
+        <div className={s.about_coffee__description}>
           <P className='mb-4'>Im BUDDE wird Kaffee nach den Prinzipien der Specialty-Coffee-Zubereitung angeboten. Unsere Kaffeebohnen werden in einer Mahlkönig 43s Ladenmühle gemahlen und in einer Kees van der Westen „Spirit“ Espressomaschine zubereitet.</P>
           <P>Die Bohnen, die für einen Espressobezug benötigt werden, werden vor dem Mahlen abgewogen, ebenso jeder Espressobezug, nachdem er als „Shot“ in der Tasse landet. Mahlgrad, TDS-Wert, Extraktionsverhältnis, Brühdruck und Brühtemperatur werden regelmäßig ermittelt. Das Wasser wird gefiltert bevor es die Espressomaschine durchläuft. Der Siebträger, das Sieb und die Brühgruppe werden vor jedem Espressobezug gereinigt. So wird eine Kontinuität im Bezug auf Stärke und Geschmack des Kaffees erreicht.</P>
         </div>
-        <div className='md:mt-10 xl:flex xl:gap-20 xl:mt-20'>
+        <div className={`md:mt-10 xl:flex xl:gap-20 xl:mt-20 ${s.about_coffee__description_bottom}`}>
           <Image className='w-full max-w-md mx-auto my-10 rounded-md block md:my-0 md:float-left md:h-fit md:mr-10 md:w-1/2 md:mb-10 xl:h-auto object-cover xl:w-auto xl:max-w-xl xl:m-0 xl:flex-grow' src='/images/Image_About-coffee.webp' alt='' width={700} height={875} />
           <div className='xl:w-1/2'>
             <P className='mb-4'>

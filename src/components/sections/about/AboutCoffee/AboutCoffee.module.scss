@@ -1,5 +1,36 @@
+@use 'src/styles/mixins.scss' as g;
+
 .about_coffee {
-  @apply relative md:py-36 lg:py-40 overflow-hidden bg-lighter-yellow;
+  @apply relative overflow-hidden bg-lighter-yellow md:py-36 lg:py-40;
+
+  @screen md {
+    &__headline {
+      @include g.headline-anime-before;
+    }
+
+    &__description,
+    &__description_bottom {
+      @include g.appearing-anime-before;
+    }
+
+    &[data-is-visible='true'] {
+      .about_coffee__headline {
+        @include g.headline-anime-after;
+      }
+
+      .about_coffee__description,
+      .about_coffee__description_bottom {
+        @include g.appearing-anime-after;
+      }
+
+      .about_coffee__description {
+        @apply delay-300;
+      }
+      .about_coffee__description_bottom {
+        @apply delay-500;
+      }
+    }
+  }
 
   &:before {
     @apply absolute top-0 left-0 w-screen z-0;

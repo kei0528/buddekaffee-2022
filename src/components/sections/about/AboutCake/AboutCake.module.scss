@@ -1,0 +1,27 @@
+@use '/src/styles/mixins.scss' as g;
+
+.about_cake {
+  &__headline {
+    @include g.headline-anime-before;
+  }
+
+  &__description,
+  &__img {
+    @include g.appearing-anime-before;
+  }
+
+  &__description {
+    @apply delay-500;
+  }
+
+  &[data-is-visible='true'] {
+    .about_cake__headline {
+      @include g.headline-anime-after;
+    }
+
+    .about_cake__description,
+    .about_cake__img {
+      @include g.appearing-anime-after;
+    }
+  }
+}
