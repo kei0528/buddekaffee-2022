@@ -6,12 +6,12 @@ import Image from 'next/image';
 import { BaseCarousel as Carousel } from 'src/components/uis/BaseCarousel';
 import { BaseHeadline as Headline } from 'src/components/uis/BaseHeadline';
 import { BaseSection as Section } from 'src/components/uis/BaseSection';
-import { Button } from 'src/components/uis/Button';
 import { NavArrow } from 'src/components/uis/NavArrow';
 import { useElementOnVisible } from 'src/hooks/useElementOnVisible';
 import { createRef } from 'react';
+import { LinkButton } from 'src/components/uis/LinkButton';
 
-const imgSrcs = ['/images/gallery/Image_Gallery1.jpg', '/images/gallery/Image_Gallery2.jpg', '/images/gallery/Image_Gallery3.jpg', '/images/gallery/Image_Gallery4.jpg', '/images/gallery/Image_Gallery5.jpg', '/images/gallery/Image_Gallery6.jpg', '/images/gallery/Image_Gallery7.jpg', '/images/gallery/Image_Gallery8.jpg', '/images/gallery/Image_Gallery9.jpg'];
+const imgSrcs = ['/images/home-gallery/Image_Gallery1.webp', '/images/home-gallery/Image_Gallery2.webp', '/images/home-gallery/Image_Gallery3.webp', '/images/home-gallery/Image_Gallery7.webp', '/images/home-gallery/Image_Gallery4.webp', '/images/home-gallery/Image_Gallery5.webp', '/images/home-gallery/Image_Gallery6.webp'];
 
 const ImageWrapper = ({ imgSrc }: { imgSrc: string }) => {
   return (
@@ -45,7 +45,9 @@ export const Gallery = () => {
           />
         </div>
         <div className={s.button}>
-          <Button className='mt-12 w-full  sm:w-fit sm:mx-auto sm:block'>Zum Gallerie</Button>
+          <LinkButton className='mt-12 w-full  sm:w-fit sm:mx-auto sm:block' href='/gallery'>
+            Zum Gallerie
+          </LinkButton>
         </div>
         <NavArrow label='Gallerie' />
       </>

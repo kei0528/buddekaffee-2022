@@ -12,6 +12,7 @@ module.exports = {
         'sky-blue': '#325C84',
         'lighter-yellow': '#FCFAF6',
         'dark-transparent': '#1e1f25cc',
+        'light-transparent': '#1e1f2542',
         'pink': '#e18eb4'
       },
       maxWidth: {

@@ -1,0 +1,1 @@
+export { GalleryImages } from './GalleryImages';
