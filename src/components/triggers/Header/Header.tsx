@@ -8,7 +8,7 @@ export const Header = () => {
   const { isOpen, toggleMenu, newsIsOpen, toggleNewsIsOpen, closeMenu, data, isLoading, error } = useHeaderState();
 
   const navItems = [
-    { name: 'HOME', link: '' },
+    { name: 'HOME', link: '/' },
     { name: 'ÜBER UNS', link: '/about' },
     { name: 'GALLERIE', link: '/gallery' },
     { name: 'KONTAKT', link: '/#contact' }

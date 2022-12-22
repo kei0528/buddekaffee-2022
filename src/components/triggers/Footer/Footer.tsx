@@ -1,8 +1,13 @@
+import { useAtom } from 'jotai';
 import Image from 'next/image';
+import Link from 'next/link';
+import { isLoggedInAtom } from 'src/store/auth.state';
 import type { IgResType } from 'src/types/instagram.type';
 import { uuid } from 'src/utils/uuid';
 
 export const Footer = ({ igPhotos }: { igPhotos: IgResType }) => {
+  const [isLoggedIn] = useAtom(isLoggedInAtom);
+
   return (
     <footer className='px-5 py-10 border-t sm:px-12 bg-lighter-yellow'>
       <div className='max-w-max-section mx-auto flex justify-between gap-20 flex-wrap'>
@@ -48,6 +53,12 @@ export const Footer = ({ igPhotos }: { igPhotos: IgResType }) => {
         </div>
       </div>
       <small className='mt-16 file: block text-center'>&copy; Budde Kaffee 2018 - {new Date().getFullYear()}</small>
+      <Link className='block w-fit mx-auto mt-3 text-xs hover:underline' href='/imprint'>
+        Impressum
+      </Link>
+      <Link className='block w-fit mx-auto mt-3 text-xs hover:underline' href={isLoggedIn ? '/admin' : '/login'}>
+        {isLoggedIn ? 'Zu Admin-Seite' : 'Login'}
+      </Link>
     </footer>
   );
 };
