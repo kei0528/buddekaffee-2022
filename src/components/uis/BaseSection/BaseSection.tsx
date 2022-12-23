@@ -1,6 +1,6 @@
 import { forwardRef, ReactElement } from 'react';
 
-type Props = { children: ReactElement; innerClass?: string; outerClass?: string; id?: string };
+type Props = { children: ReactElement | ReactElement[]; innerClass?: string; outerClass?: string; id?: string };
 type Ref = HTMLElement;
 
 export const BaseSection = forwardRef<Ref, Props>(({ children, innerClass, outerClass, id }, ref) => {

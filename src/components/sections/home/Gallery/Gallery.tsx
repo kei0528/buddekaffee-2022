@@ -15,7 +15,7 @@ const imgSrcs = ['/images/home-gallery/Image_Gallery1.webp', '/images/home-galle
 
 const ImageWrapper = ({ imgSrc }: { imgSrc: string }) => {
   return (
-    <div className='w-[290px] h-[290px]'>
+    <div className='w-[290px] h-[290px] rounded-lg overflow-hidden'>
       <Image alt='' src={imgSrc} width={300} height={300} />
     </div>
   );
@@ -45,7 +45,7 @@ export const Gallery = () => {
           />
         </div>
         <div className={s.button}>
-          <LinkButton className='mt-12 w-full  sm:w-fit sm:mx-auto sm:block' href='/gallery'>
+          <LinkButton className='mt-12 w-full text-center mx-auto block sm:w-fit' href='/gallery'>
             Zum Gallerie
           </LinkButton>
         </div>

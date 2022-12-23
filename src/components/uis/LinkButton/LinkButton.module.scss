@@ -1,5 +1,5 @@
 .btn {
-  @apply px-7 pt-1 pb-2 text-lg text-black border-2 border-black bg-white relative duration-200;
+  @apply px-7 pt-1 pb-2 text-lg text-black border-2 border-black bg-white relative duration-200 text-center;
 
   &:hover {
     @apply bg-black text-white;

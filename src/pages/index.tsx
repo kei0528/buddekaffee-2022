@@ -1,8 +1,9 @@
 import { InferGetStaticPropsType } from 'next';
-import { About } from 'src/components/sections/home/About';
-import { Contact } from 'src/components/sections/home/Contact';
-import { Gallery } from 'src/components/sections/home/Gallery';
 import { Hero } from 'src/components/sections/home/Hero';
+import { About } from 'src/components/sections/home/About';
+import { Gallery } from 'src/components/sections/home/Gallery';
+import { Menu } from 'src/components/sections/home/Menu';
+import { Contact } from 'src/components/sections/home/Contact';
 import { Map } from 'src/components/sections/home/Map';
 import { Footer } from 'src/components/triggers/Footer';
 
@@ -24,6 +25,7 @@ const Home = ({ igPhotos }: Props) => {
       <Hero />
       <About />
       <Gallery />
+      <Menu />
       <Contact />
       <Map />
       <Footer igPhotos={igPhotos} />

@@ -1,6 +1,7 @@
 import { useAtom } from 'jotai';
 import { useRouter } from 'next/router';
 import { useEffect } from 'react';
+// import { ManageMenu } from 'src/components/sections/admin/ManageMenu';
 import { ManageNews } from 'src/components/sections/admin/ManageNews';
 import { BaseHeadline as Headline } from 'src/components/uis/BaseHeadline';
 import { BaseSection as Section } from 'src/components/uis/BaseSection';
@@ -22,6 +23,7 @@ const Admin = () => {
           <Headline label='Admin Dashboard' Element='h1' />
           <div className='grid gap-8 md:grid-cols-2'>
             <ManageNews />
+            {/* <ManageMenu /> */}
             {/* <ManageOpeningHours /> */}
           </div>
         </>

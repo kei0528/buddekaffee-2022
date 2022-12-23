@@ -2,7 +2,7 @@ import s from './BaseModal.module.scss';
 import Image from 'next/image';
 import { ReactElement } from 'react';
 
-export const BaseModal = ({ modalOpen, close, children }: { modalOpen: boolean; children: ReactElement; close: () => void }) => {
+export const BaseModal = ({ modalOpen, close, children }: { modalOpen: boolean; children: ReactElement | ReactElement[]; close: () => void }) => {
   return (
     <>
       <article className={`${s.modal} ${modalOpen ? s.open : s.close}`}>

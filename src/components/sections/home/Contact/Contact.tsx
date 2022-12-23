@@ -32,7 +32,7 @@ export const Contact = () => {
   return (
     <Section id='contact'>
       <>
-        <div className={`bg-lighter-yellow rounded-md shadow-lg px-5 py-8 lg:flex lg:p-0 lg:overflow-hidden ${s.contact}`} ref={sectionRef}>
+        <div className={`bg-lighter-yellow rounded-lg shadow-lg px-5 py-8 lg:flex lg:p-0 lg:overflow-hidden ${s.contact}`} ref={sectionRef}>
           <div className='hidden  lg:block lg:w-1/2 lg:object-cover'>
             <Image className='h-full object-cover' src='/images/Image_Contact.webp' alt='' width={1000} height={819} />
           </div>

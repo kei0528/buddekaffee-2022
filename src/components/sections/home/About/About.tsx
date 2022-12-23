@@ -10,6 +10,7 @@ import { useElementOnVisible } from 'src/hooks/useElementOnVisible';
 import { useRef } from 'react';
 import { useTiltEffect } from 'src/hooks/useTiltEffect';
 import Link from 'next/link';
+import { LinkButton } from 'src/components/uis/LinkButton';
 
 export const About = () => {
   const sectionRef = useRef<HTMLElement>(null);
@@ -29,15 +30,17 @@ export const About = () => {
           <Headline label='ÜBER UNS' className={s.headline} />
           <div className={s.about_contents}>
             <P>Herz und Kopf des kleinen Cafés in der Buddestraße in Berlin-Tegel sind die Betreiberin Svenja Fox und der ehemalige Head-Barista bei BUDDE KAFFEE, Keisuke Tanaka, die aus dem Geheimtipp BUDDE KAFFEE längst eine Institution gemacht haben, eine Anlaufstelle für alle, die auf der Suche nach einem extrem gut zubereiteten Kaffee und hausgebackenen veganen Kuchen in gemütlicher und freundlicher Atmosphäre sind.</P>
-            <Link className='mt-4 flex items-center gap-2 text-base w-fit text-sky-blue lg:text-lg' href='/about'>
+            <LinkButton className='mt-10 block !bg-lighter-yellow hover:!bg-black md:w-fit' href='/about'>
               Mehr lesen
+            </LinkButton>
+            {/* <Link className='mt-4 flex items-center gap-2 text-base w-fit text-sky-blue lg:text-lg' href='/about'>
               <Image src='/icons/Icon-Arrow_right.svg' alt='' width={6} height={6} />
-            </Link>
+            </Link> */}
           </div>
         </div>
         <div className={`relative mt-10 md:flex-1 z-10  ${s.img_container}`}>
           <div className={s.about_img} ref={imgRef}>
-            <Image className='w-full object-cover ' src='/images/Image_About2.webp' alt='' height={389} width={600} />
+            <Image className='w-full object-cover rounded-lg' src='/images/Image_About2.webp' alt='' height={389} width={600} />
           </div>
         </div>
 
