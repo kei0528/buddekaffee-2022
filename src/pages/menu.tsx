@@ -13,49 +13,48 @@ export const getStaticProps = async () => {
   /* Instagram */
   const TOKEN = process.env.INSTAGRAM_TOKEN;
   const URL = `https://graph.instagram.com/me/media?fields=id,caption,media_url,permalink&limit=9&access_token&access_token=${TOKEN}`;
-  const igData = await fetch(URL, {
+  const igData = await fetch(URL);
+  const igRes = await igData.json();
+
+  /* Menu */
+
+  const menuData = await fetch(url.baseUrl + '/api/menu', {
     headers: {
       'Content-Type': 'application/json'
     }
   });
-  const igRes = await igData.json();
+  const menuRes = await menuData.json();
 
-  /* Menu */
-  // try {
-  //   const menuData = await fetch(url.baseUrl + '/api/menu');
-  //   const menuRes = await menuData.json();
-  // } catch (err) {
-  //   console.log(err);
-  // }
   return {
     props: {
-      igPhotos: igRes
-      // menu: menuRes as MenuType
+      igPhotos: igRes,
+      menu: menuRes as MenuType
     }
   };
 };
 
 type Props = InferGetStaticPropsType<typeof getStaticProps>;
 
-const Menu = ({
-  igPhotos
-}: //  menu
-Props) => {
-  const [menu, setMenu] = useState<MenuType>([]);
+const Menu = ({ igPhotos, menu }: Props) => {
+  // const [menu, setMenu] = useState<MenuType>([]);
 
-  useEffect(() => {
-    (async () => {
-      try {
-        const menuData = await fetch(url.baseUrl + '/api/menu');
-        console.log('menuData', menuData);
-        const menuRes = await menuData.json();
-        console.log('menuRes', menuRes);
-        setMenu(menuRes);
-      } catch (err) {
-        console.log(err);
-      }
-    })();
-  }, []);
+  // useEffect(() => {
+  //   (async () => {
+  //     try {
+  //       const menuData = await fetch(url.baseUrl + '/api/menu', {
+  //         headers: {
+  //           'Content-Type': 'application/json'
+  //         }
+  //       });
+  //       console.log('menuData', menuData);
+  //       const menuRes = await menuData.json();
+  //       console.log('menuRes', menuRes);
+  //       setMenu(menuRes);
+  //     } catch (err) {
+  //       console.log(err);
+  //     }
+  //   })();
+  // }, []);
 
   return (
     <>
