@@ -1,37 +1,43 @@
-{
-  "Getraenke": {
-    "Kaffee Americano": 3.6,
-    "Espresso": 3.0,
-    "Espresso Macchiato": 3.3,
-    "Cappuccino": 3.6,
-    "Flat White": 3.8,
-    "Caffe Latte": 4.1,
-    "Budde Chai Latte": 4.3,
-    "Matcha Latte": 4.2,
-    "Heisse Schokolade": 4.1,
-    "Caffè Mocha": 3.8,
-    "Minze Zitrone": 3.8,
-    "Apfel Zimt Espresso": 4.1,
-    "Cranberry Espresso": 4.1,
-    "Cold Brew": 3.2,
-    "Orange Ingwer": 4.3,
-    "Iced Americano": 3.6,
-    "Iced Latte": 4.5
+[
+  {
+    "title": "Getränke",
+    "items": {
+      "Kaffee Americano": 3.6,
+      "Espresso": 3.0,
+      "Espresso Macchiato": 3.3,
+      "Cappuccino": 3.6,
+      "Flat White": 3.8,
+      "Caffe Latte": 4.1,
+      "Budde Chai Latte": 4.3,
+      "Matcha Latte": 4.2,
+      "Heiße Schokolade": 4.1,
+      "Caffè Mocha": 3.8,
+      "Minze Zitrone": 3.8,
+      "Apfel Zimt Espresso": 4.1,
+      "Cranberry Espresso": 4.1,
+      "Cold Brew": 3.2,
+      "Orange Ingwer": 4.3,
+      "Iced Americano": 3.6,
+      "Iced Latte": 4.5
+    }
   },
-  "Kuchen": {
-    "Orange-Mandel": 3.8,
-    "Erdbeer-Zitrone": 3.4,
-    "Himbeer": 3.6,
-    "Banana Bread": 3.3,
-    "Kirsch-Schoko": 3.3,
-    "Mandel-Haselnuss": 3.8,
-    "Chunky Chocolate Chip": 3.8,
-    "Moehre-Walnuss Muffin": 3.9,
-    "Apfel-Zimt Muffin": 3.9,
-    "Schoko Muffin": 3.9,
-    "Butter Croissant": 2.0,
-    "Schoko Croissant": 2.3,
-    "Zimtschnecke": 3.6,
-    "Zukkistulle": 4.2
+  {
+    "title": "Kuchen",
+    "items": {
+      "Orange-Mandel": 3.8,
+      "Erdbeer-Zitrone": 3.4,
+      "Himbeer": 3.6,
+      "Banana Bread": 3.3,
+      "Kirsch-Schoko": 3.3,
+      "Mandel-Haselnuss": 3.8,
+      "Chunky Chocolate Chip": 3.8,
+      "Möhre-Walnuss Muffin": 3.9,
+      "Apfel-Zimt Muffin": 3.9,
+      "Schoko Muffin": 3.9,
+      "Butter Croissant": 2.0,
+      "Schoko Croissant": 2.3,
+      "Zimtschnecke": 3.6,
+      "Zukkistulle": 4.2
+    }
   }
-}
+]

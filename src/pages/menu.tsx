@@ -4,6 +4,7 @@ import { url } from 'src/utils/url';
 import { Footer } from 'src/components/triggers/Footer';
 import { BaseHeadline as Headline } from 'src/components/uis/BaseHeadline';
 import { BaseSection as Section } from 'src/components/uis/BaseSection';
+import { MenuType } from 'src/types/menu.type';
 
 export const getStaticProps = async () => {
   /* Instagram */
@@ -14,7 +15,8 @@ export const getStaticProps = async () => {
 
   /* Menu */
   const menuData = await fetch(url.baseUrl + '/api/menu');
-  const menuRes = await menuData.json();
+  const menuRes = (await menuData.json()) as MenuType;
+  console.log('menuRes', menuRes);
   return {
     props: { igPhotos: igRes, menu: menuRes }
   };
@@ -28,14 +30,14 @@ const Menu = ({ igPhotos, menu }: Props) => {
       <Section>
         <Headline className='mb-8 sm:mb-12 lg:mb-20 2xl:mb-20' label='Menü' />
         <div className='grid gap-8 md:grid-cols-2 lg:gap-20'>
-          {Object.keys(menu).map(key => (
-            <div className='bg-lighter-yellow rounded-lg px-5 py-8 shadow-lg' key={key}>
-              <h3 className='text-2xl font-bold border-b-2 mb-6 border-text-black'>{key}</h3>
+          {menu.map(menuObj => (
+            <div className='bg-lighter-yellow rounded-lg px-5 py-8 shadow-lg' key={menuObj.title}>
+              <h3 className='text-2xl font-bold border-b-2 mb-6 border-text-black'>{menuObj.title}</h3>
               <ul className='flex flex-col gap-3'>
-                {Object.keys(menu[key]).map(menuName => (
-                  <li className='flex justify-between gap-8' key={menuName}>
-                    <h4 className='text-lg'>{menuName}</h4>
-                    <span className='text-lg'>{menu[key][menuName].toFixed(1)}</span>
+                {Object.keys(menuObj.items).map(key => (
+                  <li className='flex justify-between gap-8' key={key}>
+                    <h4 className='text-lg'>{key}</h4>
+                    <span className='text-lg'>{menuObj.items[key].toFixed(1)}</span>
                   </li>
                 ))}
               </ul>
