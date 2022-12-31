@@ -17,8 +17,8 @@ export const getStaticProps = async () => {
   const igRes = await igData.json();
 
   /* Menu */
-
   const menuData = await fetch(url.baseUrl + '/api/menu', {
+    //  without adding this, error happens in the pipeline
     headers: {
       'Content-Type': 'application/json'
     }
@@ -36,26 +36,6 @@ export const getStaticProps = async () => {
 type Props = InferGetStaticPropsType<typeof getStaticProps>;
 
 const Menu = ({ igPhotos, menu }: Props) => {
-  // const [menu, setMenu] = useState<MenuType>([]);
-
-  // useEffect(() => {
-  //   (async () => {
-  //     try {
-  //       const menuData = await fetch(url.baseUrl + '/api/menu', {
-  //         headers: {
-  //           'Content-Type': 'application/json'
-  //         }
-  //       });
-  //       console.log('menuData', menuData);
-  //       const menuRes = await menuData.json();
-  //       console.log('menuRes', menuRes);
-  //       setMenu(menuRes);
-  //     } catch (err) {
-  //       console.log(err);
-  //     }
-  //   })();
-  // }, []);
-
   return (
     <>
       <Section>
