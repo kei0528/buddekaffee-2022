@@ -1,1 +1,1 @@
-export type MenuType = { title: string; items: { [key: string]: number } }[];
+export type MenuType = { title: string; items: { name: string; price: number }[] }[];

@@ -33,10 +33,10 @@ const Menu = ({ igPhotos, menu }: Props) => {
             <div className='bg-lighter-yellow rounded-lg px-5 py-8 shadow-lg' key={menuObj.title}>
               <h3 className='text-2xl font-bold border-b-2 mb-6 border-text-black'>{menuObj.title}</h3>
               <ul className='flex flex-col gap-3'>
-                {Object.keys(menuObj.items).map(key => (
-                  <li className='flex justify-between gap-8' key={key}>
-                    <h4 className='text-lg'>{key}</h4>
-                    <span className='text-lg'>{menuObj.items[key].toFixed(1)}</span>
+                {menuObj.items.map(item => (
+                  <li className='flex justify-between gap-8' key={item.name}>
+                    <h4 className='text-lg'>{item.name}</h4>
+                    <span className='text-lg'>{item.price.toFixed(1)}</span>
                   </li>
                 ))}
               </ul>
