@@ -10,7 +10,11 @@ export const getStaticProps = async () => {
   /* Instagram */
   const TOKEN = process.env.INSTAGRAM_TOKEN;
   const URL = `https://graph.instagram.com/me/media?fields=id,caption,media_url,permalink&limit=9&access_token&access_token=${TOKEN}`;
-  const igData = await fetch(URL);
+  const igData = await fetch(URL, {
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  });
   const igRes = await igData.json();
 
   /* Menu */
