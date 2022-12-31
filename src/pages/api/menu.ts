@@ -6,7 +6,6 @@ const menuHandler = (req: NextApiRequest, res: NextApiResponse) => {
   if (req.method === 'GET') {
     try {
       const newsJson = fs.readFileSync(path.join(process.cwd() + '/public/siteData', 'menu.json'), 'utf-8');
-      console.log(newsJson);
       res.send(newsJson);
     } catch (err) {
       const error = err as any;

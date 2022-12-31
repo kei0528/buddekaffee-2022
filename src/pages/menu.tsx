@@ -15,10 +15,9 @@ export const getStaticProps = async () => {
 
   /* Menu */
   const menuData = await fetch(url.baseUrl + '/api/menu');
-  const menuRes = (await menuData.json()) as MenuType;
-  console.log('menuRes', menuRes);
+  const menuRes = await menuData.json();
   return {
-    props: { igPhotos: igRes, menu: menuRes }
+    props: { igPhotos: igRes, menu: menuRes as MenuType }
   };
 };
 
