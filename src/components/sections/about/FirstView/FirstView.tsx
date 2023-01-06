@@ -23,7 +23,7 @@ export const FirstView = () => {
         <Image className={`rounded-md shadow-md object-cover md:w-6/12 ${s.fv__img}`} src='/images/Image_About-fv.webp' alt='' width={842} height={596} />
         <div className='mt-10 md:mt-0 md:flex-1'>
           <Headline className={s.fv__headline} label='Über uns' />
-          <P className={s.fv__description}>Herz und Kopf des kleinen Cafés in der Buddestraße in Berlin-Tegel sind die Betreiberin Svenja Fox und der ehemalige Head-Barista bei BUDDE KAFFEE, Keisuke Tanaka, die aus dem Geheimtipp BUDDE KAFFEE längst eine Institution gemacht haben, eine Anlaufstelle für alle, die auf der Suche nach einem extrem gut zubereiteten Kaffee und hausgebackenen veganen Kuchen in gemütlicher und freundlicher Atmosphäre sind.</P>
+          <P className={s.fv__description}>Herz und Kopf des kleinen Cafés in der Buddestraße in Berlin-Tegel sind die Betreiberin Svenja Fox und der ehemalige Head-Barista des BUDDE KAFFEE, Keisuke Tanaka, die aus dem Geheimtipp BUDDE KAFFEE längst eine Institution gemacht haben, eine Anlaufstelle für alle, die auf der Suche nach einem extrem gut zubereiteten Kaffee und hausgebackenen veganen Kuchen in gemütlicher und freundlicher Atmosphäre sind.</P>
         </div>
         <NavArrow label='Über uns' position='start' />
       </>

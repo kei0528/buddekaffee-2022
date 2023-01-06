@@ -21,7 +21,7 @@ export const AboutCoffee = () => {
   return (
     <Section outerClass={s.about_coffee} innerClass='py-20 lg:py-32' ref={sectionRef}>
       <>
-        <Headline className={s.about_coffee__headline} label='Über uns' />
+        <Headline className={s.about_coffee__headline} label='Über Kaffee' />
         <div className={s.about_coffee__description}>
           <P className='mb-4'>Im BUDDE wird Kaffee nach den Prinzipien der Specialty-Coffee-Zubereitung angeboten. Unsere Kaffeebohnen werden in einer Mahlkönig 43s Ladenmühle gemahlen und in einer Kees van der Westen „Spirit“ Espressomaschine zubereitet.</P>
           <P>Die Bohnen, die für einen Espressobezug benötigt werden, werden vor dem Mahlen abgewogen, ebenso jeder Espressobezug, nachdem er als „Shot“ in der Tasse landet. Mahlgrad, TDS-Wert, Extraktionsverhältnis, Brühdruck und Brühtemperatur werden regelmäßig ermittelt. Das Wasser wird gefiltert bevor es die Espressomaschine durchläuft. Der Siebträger, das Sieb und die Brühgruppe werden vor jedem Espressobezug gereinigt. So wird eine Kontinuität im Bezug auf Stärke und Geschmack des Kaffees erreicht.</P>
