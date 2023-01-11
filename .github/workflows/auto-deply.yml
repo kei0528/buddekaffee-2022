@@ -1,0 +1,21 @@
+name: auto-deploy
+on:
+  schedule:
+    - cron: '*/5 * * * *'
+
+jobs:
+  auto-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@main
+      - name: auto-deploy
+        run: |
+          bash logger.sh
+      - name: git commit
+        run: |
+          git remote set-url origin https://github-actions:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}
+          git config --global user.email "***@***.com"
+          git config --global user.name "github workflow"
+          git add .
+          git commit -m 'auto-deploy'
+          git push origin main
