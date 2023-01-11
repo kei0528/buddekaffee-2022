@@ -21,8 +21,8 @@ export const Footer = ({ igPhotos }: { igPhotos: IgResType }) => {
                 <br />
                 13507 Berlin
               </address>
-              <a className='mt-2 block' href='tel: 123123123'>
-                TEL:012301230123
+              <a className='mt-2 block' href='tel:+491732027575'>
+                TEL:+491732027575
               </a>
             </div>
             <div className='flex flex-col'>
