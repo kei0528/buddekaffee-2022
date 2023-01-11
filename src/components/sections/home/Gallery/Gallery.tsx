@@ -33,7 +33,7 @@ export const Gallery = () => {
   return (
     <Section ref={sectionRef} outerClass={s.gallery} id='gallery'>
       <>
-        <Headline className={s.headline} label='Gallery' />
+        <Headline className={s.headline} label='Gallerie' />
         <div className='w-full'>
           <Carousel
             className={s.carousel}
@@ -46,7 +46,7 @@ export const Gallery = () => {
         </div>
         <div className={s.button}>
           <LinkButton className='mt-12 w-full text-center mx-auto block sm:w-fit' href='/gallery'>
-            Zum Gallerie
+            Zur Gallerie
           </LinkButton>
         </div>
         <NavArrow label='Gallerie' />
