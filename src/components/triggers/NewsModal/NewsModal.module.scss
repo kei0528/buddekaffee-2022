@@ -8,6 +8,7 @@
 
   &_contents {
     @apply text-text-black text-lg lg:text-[21px] lg:leading-9;
+    white-space: break-spaces;
   }
 }
 
