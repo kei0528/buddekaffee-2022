@@ -1,4 +1,5 @@
 import { useAtom } from 'jotai';
+import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { useEffect } from 'react';
 // import { ManageMenu } from 'src/components/sections/admin/ManageMenu';
@@ -18,16 +19,19 @@ const Admin = () => {
 
   if (isLoggedIn) {
     return (
-      <Section>
-        <>
+      <>
+        <Head>
+          <title>Budde Kaffee | Admin</title>
+        </Head>
+        <Section>
           <Headline label='Admin Dashboard' Element='h1' />
           <div className='grid gap-8 md:grid-cols-2'>
             <ManageNews />
             {/* <ManageMenu /> */}
             {/* <ManageOpeningHours /> */}
           </div>
-        </>
-      </Section>
+        </Section>
+      </>
     );
   } else {
     <></>;

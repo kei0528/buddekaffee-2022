@@ -4,6 +4,10 @@ const nextConfig = {
   swcMinify: true,
   images: {
     domains: ['scontent-ham3-1.cdninstagram.com']
+  },
+  i18n: {
+    locales: ['de'],
+    defaultLocale: 'de'
   }
 };
 

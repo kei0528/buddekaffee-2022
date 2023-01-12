@@ -12,7 +12,7 @@ export const Footer = ({ igPhotos }: { igPhotos: IgResType }) => {
     <footer className='px-5 py-10 border-t sm:px-12 bg-lighter-yellow'>
       <div className='max-w-max-section mx-auto flex justify-between gap-20 flex-wrap'>
         <div>
-          <h5 className='text-3xl font-bold font-display mb-3'>Adresse</h5>
+          <h3 className='text-3xl font-bold font-display mb-3'>Adresse</h3>
           <div className='flex gap-10'>
             <div>
               <h6>Budde Kaffee</h6>
@@ -33,19 +33,19 @@ export const Footer = ({ igPhotos }: { igPhotos: IgResType }) => {
           </div>
         </div>
         <div className='flex flex-col items-start'>
-          <h5 className='text-3xl font-bold font-display mb-3 flex gap-5 items-baseline'>
+          <h3 className='text-3xl font-bold font-display mb-3 flex gap-5 items-baseline'>
             Instagram
             <a className='text-sky-blue underline flex gap-2 text-base' href='https://www.instagram.com/buddekaffee'>
               @buddekaffee
               <Image src='/icons/Icon-Arrow_right.svg' alt='Redirect to Instagram' width={5} height={5} />
             </a>
-          </h5>
+          </h3>
 
           <ul className='grid grid-cols-3 gap-2'>
             {igPhotos.data.map(imgData => (
               <li className='w-[30vw] h-[30vw] overflow-hidden relative list-none sm:w-24 sm:h-24' key={uuid()}>
                 <a href={imgData.permalink}>
-                  <img className='h-full w-full object-cover duration-150 hover:brightness-75' src={imgData.media_url} alt='' />
+                  <Image width={96} height={96} className='h-full w-full object-cover duration-150 hover:brightness-75' src={imgData.media_url} alt='' />
                 </a>
               </li>
             ))}

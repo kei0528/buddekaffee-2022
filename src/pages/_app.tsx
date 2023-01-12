@@ -5,8 +5,14 @@ import Head from 'next/head';
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <GlobalLayout>
-      <Component {...pageProps} />
-    </GlobalLayout>
+    <>
+      <Head>
+        <title>Budde Kaffee</title>
+      </Head>
+
+      <GlobalLayout>
+        <Component {...pageProps} />
+      </GlobalLayout>
+    </>
   );
 }

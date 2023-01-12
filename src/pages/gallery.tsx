@@ -1,4 +1,5 @@
 import { InferGetStaticPropsType } from 'next';
+import Head from 'next/head';
 import { GalleryImages } from 'src/components/sections/gallery/GalleryImages';
 import { Map } from 'src/components/sections/home/Map';
 import { Footer } from 'src/components/triggers/Footer';
@@ -18,6 +19,9 @@ type Props = InferGetStaticPropsType<typeof getStaticProps>;
 const Gallery = ({ igPhotos }: Props) => {
   return (
     <>
+      <Head>
+        <title>Budde Kaffee | Gallerie</title>
+      </Head>
       <GalleryImages />
       <Map />
       <Footer igPhotos={igPhotos} />

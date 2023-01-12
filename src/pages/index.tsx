@@ -6,6 +6,7 @@ import { Menu } from 'src/components/sections/home/Menu';
 import { Contact } from 'src/components/sections/home/Contact';
 import { Map } from 'src/components/sections/home/Map';
 import { Footer } from 'src/components/triggers/Footer';
+import Head from 'next/head';
 
 export const getStaticProps = async () => {
   const TOKEN = process.env.INSTAGRAM_TOKEN;
@@ -22,6 +23,9 @@ type Props = InferGetStaticPropsType<typeof getStaticProps>;
 const Home = ({ igPhotos }: Props) => {
   return (
     <>
+      <Head>
+        <title>Budde Kaffee</title>
+      </Head>
       <Hero />
       <About />
       <Gallery />

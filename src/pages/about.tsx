@@ -1,4 +1,5 @@
 import { InferGetStaticPropsType } from 'next';
+import Head from 'next/head';
 import { AboutCake } from 'src/components/sections/about/AboutCake';
 import { AboutCoffee } from 'src/components/sections/about/AboutCoffee';
 import { FirstView } from 'src/components/sections/about/FirstView';
@@ -21,6 +22,9 @@ type Props = InferGetStaticPropsType<typeof getStaticProps>;
 const About = ({ igPhotos }: Props) => {
   return (
     <>
+      <Head>
+        <title>Budde Kaffee | Über uns</title>
+      </Head>
       <FirstView />
       <AboutCoffee />
       <AboutCake />

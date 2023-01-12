@@ -19,7 +19,7 @@ export const Hero = () => {
         <ListItem label='SO: 11 - 16' />
       </ul>
       <a href='#about-us' className='mx-auto relative z-10 cursor-pointer p-1 animate-bounce hover:animate-none'>
-        <Image src='/icons/Icon_Triangle-down.svg' alt='' width={31} height={12} />
+        <Image src='/icons/Icon_Triangle-down.svg' alt='Zu Über uns' width={31} height={12} />
       </a>
       <NavArrow label='HOME' position='start' />
     </section>
