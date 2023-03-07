@@ -38,7 +38,7 @@ type Props = InferGetStaticPropsType<typeof getStaticProps>;
 const Menu = ({ igPhotos, menu }: Props) => {
   return (
     <>
-      <Section>
+      {/* <Section>
         <Headline className='mb-8 sm:mb-12 lg:mb-20 2xl:mb-20' label='Menü' />
         <div className='grid gap-8 md:grid-cols-2 lg:gap-20'>
           {menu.length &&
@@ -57,7 +57,7 @@ const Menu = ({ igPhotos, menu }: Props) => {
             ))}
         </div>
       </Section>
-      <Footer igPhotos={igPhotos} />
+      <Footer igPhotos={igPhotos} /> */}
     </>
   );
 };

@@ -29,7 +29,7 @@ const Home = ({ igPhotos }: Props) => {
       <Hero />
       <About />
       <Gallery />
-      <Menu />
+      {/* <Menu /> */}
       <Contact />
       <Map />
       <Footer igPhotos={igPhotos} />
