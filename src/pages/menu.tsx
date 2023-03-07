@@ -17,25 +17,27 @@ export const getStaticProps = async () => {
   const igRes = await igData.json();
 
   /* Menu */
-  const menuData = await fetch(url.baseUrl + '/api/menu', {
-    //  without adding this, error happens in the pipeline
-    headers: {
-      'Content-Type': 'application/json'
-    }
-  });
-  const menuRes = await menuData.json();
+  // const menuData = await fetch(url.baseUrl + '/api/menu', {
+  //   //  without adding this, error happens in the pipeline
+  //   headers: {
+  //     'Content-Type': 'application/json'
+  //   }
+  // });
+  // const menuRes = await menuData.json();
 
   return {
     props: {
       igPhotos: igRes,
-      menu: menuRes as MenuType
+      // menu: menuRes as MenuType
     }
   };
 };
 
 type Props = InferGetStaticPropsType<typeof getStaticProps>;
 
-const Menu = ({ igPhotos, menu }: Props) => {
+const Menu = ({ igPhotos, 
+  // menu
+ }: Props) => {
   return (
     <>
       {/* <Section>
